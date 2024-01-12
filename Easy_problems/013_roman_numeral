@@ -29,15 +29,40 @@
 # C can be placed before D (500) and M (1000) to make 400 and 900.
 # Given a roman numeral, convert it to an integer.
 
-# answer when converting to string
+# Convert Roman Numerals to Normal Integers
 def roman_to_int(x)
-    hash = { I: "1", V: "5"}
-    x.split().map do |x|
-        return hash[x]
-    end
-end
+    hash =  {   'I' => 1,
+                'V' => 5,
+                'X' => 10,
+                'L' => 50,
+                'C' => 100,
+                'D' => 500,
+                'M' => 1000 }
 
-# answer but not using strings
+    total_value = 0
+    previous_value = 0 
+    x.each_char do |char|
+        current_value = hash[char]
+
+        unless current_value
+            puts "Warning: '#{char}' is not a valid Roman numeral."
+            next
+        end
+
+        if current_value <= previous_value
+            total_value += current_value || 0 # add 0 if invalid letter used
+        elsif current_value > previous_value
+            # If the current value is larger than the previous value like for "IV"
+            # We already added previous value on the last loop, so we subtract
+            # it once to remove the intial one, and then again beacuse we need
+            # one less than the current value (like how IV is 4) and then add
+            # the current value
+            total_value += current_value - (previous_value * 2) || 0
+        end
+        previous_value = current_value
+    end
+    return total_value
+end
 
 
 def test_roman(x)
@@ -48,7 +73,10 @@ def test_roman(x)
 end
 
 
-test_roman("III")
-# test_roman("LVIII")
-# test_roman("MCMXCIV")
+test_roman("III")       # 3
+test_roman("IV")        # 4
+test_roman("LVIII")     # 58
+test_roman("MCMXCIV")   # 1994
+test_roman(" ")         # error testing
+test_roman("ABAB")      # error testing
 
