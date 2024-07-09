@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 # Problem 13:
 # https://leetcode.com/problems/roman-to-integer/solutions/
 # Roman numerals are represented by seven different symbols: 

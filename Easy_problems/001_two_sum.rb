@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 # Problem 1:
 # https://leetcode.com/problems/two-sum/description/
 # Given an array of integers nums and an integer target, 
@@ -8,9 +6,11 @@
 # one solution, and you may not use the same element twice. 
 # You can return the answer in any order.
 
+# To run this code: > ruby 001_two_sum.rb
+
 #input
-nums = [2,7,11,15]
-target = 9
+#nums = [2,7,11,15]
+#target = 9
 
 #O(n^2) answer
 def two_sum1(nums, target)
@@ -44,9 +44,9 @@ def test_two_sum(nums, target)
     puts ""  # Just for a clear separation in output
 end
 
-# Test with a palindrome
+# Test one
 test_two_sum([2,7,11,15], 9)
 
-# Test with a non-palindrome
+# Test two
 test_two_sum([3,5,14,2,4], 6)
 

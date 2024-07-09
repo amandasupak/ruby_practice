@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 # Problem 9:
 # https://leetcode.com/problems/palindrome-number/description/ 
 # Given an integer x, return true if x is a palindrome, 
