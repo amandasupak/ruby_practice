@@ -6,7 +6,8 @@
 # one solution, and you may not use the same element twice. 
 # You can return the answer in any order.
 
-# To run this code: > ruby 001_two_sum.rb
+# To run this code: > chmod +x 001_two_sum.rb
+#                   > ruby 001_two_sum.rb
 
 #input
 #nums = [2,7,11,15]
