@@ -11,21 +11,18 @@
 # Every close bracket has a corresponding open bracket of the same type.
 
 
-
+# Build a stack when you find an open bracket, and remove it from the stack
+# when you find a cooresponding closing bracket.
 def is_valid(str)
   stack = []
   matching_bracket = { '(' => ')', '[' => ']', '{' => '}' }
 
-  # Build a stack when you find an open bracket, and remove it from the stack
-  # when you find a cooresponding closing bracket. 
-
   str.each_char do |char|
-
     # if there is an open bracket, add char to the stack
     if matching_bracket.keys.include?(char) 
       stack.push(char)
 
-    # if there is a close bracket
+    # if there is a close bracket try to remove it from the stack
     elsif matching_bracket.values.include?(char) 
 
       # Return false if either of these are true
@@ -38,7 +35,9 @@ def is_valid(str)
       ### then returns false and ends the loop. If the stack was a '(' with a has 
       ### of ')', and the char was a ')' then thses two would match and return false
       ### for the if statement and continue the loop. 
-      if stack.empty? || matching_bracket[stack.pop] != char
+      if stack.empty? 
+        return false
+      elsif matching_bracket[stack.pop] != char
         return false
       end
     end
