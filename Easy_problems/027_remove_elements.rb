@@ -24,6 +24,7 @@ def remove_elements(nums, val)
       k += 1
     end
   end
+  
   # Optionally fill the remaining elements with a placeholder for clarity
   (k...nums.length).each do |i|
     nums[i] = '_'
