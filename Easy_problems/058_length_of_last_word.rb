@@ -31,12 +31,12 @@ def length_of_last_word(s)
 
   reverse_string.each_char do |char|
     if char != " "
-      if in_word == false
+      if !in_word # if in_word == false
         in_word = true
       end
       word_length += 1
     else char == " "
-      if in_word == true
+      if in_word # if in_word == true
         return word_length
       end
     end
