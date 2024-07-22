@@ -25,31 +25,30 @@
 
 def length_of_last_word(s)
   reverse_string = s.reverse
-  puts reverse_string
 
-  word_lenth = 0 
+  word_length = 0 
   in_word = false # memory to determine if we have reached the first word or not
 
   reverse_string.each_char do |char|
     if char != " "
       if in_word == false
         in_word = true
-        world_length =+ 1
       end
+      word_length += 1
     end
 
     if char == " "
       if in_word == true
-        return word_lenth
+        return word_length
       end
     end
   end
 
-    return world_length
+    return word_length
 end
 
 def test_length(s)
-  puts "Input #{s}"
+  puts "Input '#{s}' "
   results = length_of_last_word(s)
   puts "Output: #{results.inspect}"
   puts "" # Just for a clear separation in outputs
@@ -58,3 +57,4 @@ end
 test_length("Hello World")                  # output: 5
 test_length("   fly me   to   the moon  ")  # output: 4
 test_length("luffy is still joyboy")        # output: 6
+test_length("      ")                       # output: 0
