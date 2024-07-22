@@ -35,9 +35,7 @@ def length_of_last_word(s)
         in_word = true
       end
       word_length += 1
-    end
-
-    if char == " "
+    else char == " "
       if in_word == true
         return word_length
       end
