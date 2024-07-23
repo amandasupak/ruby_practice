@@ -188,3 +188,12 @@ Output:
 3: bb
 4: cc
 
+# .all? Passes each element of the collection to the given block. 
+# The method returns true if the block never returns false or nil.
+> ["ant", "bear", "cat"].all? { |word| word.length >= 3 }
+=> true
+> ["ant", "bear", "cat"].all? { |word| word.length >= 4 }
+=> false
+> ["ant", "apple", "apollo"].all? { |char| char[0] == "a" }
+=> true
+
