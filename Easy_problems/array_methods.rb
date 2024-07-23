@@ -6,12 +6,24 @@
 > %w[apple, banana]
 Output: ["apple", "banana"]
 
-# Print specific element
+# Nested arrrays
+> nested_array = [["salmon", "halibut"], ["coral", "reef"]]
+> nested_array[1][0]
+Putput: "coral"
+
+# Print specific element or index
 > array = ["a", "b", "c"]
-> array[0]
+> array[0] or array.first
 Output: "a"
 > array[-1] or array.last
 Output: "c"
+> array.index("a")
+Output: 0
+
+# Length
+> array = [1,2,3]
+> array.length
+Output: 3
 
 
 # Sort vs Sort!
@@ -58,7 +70,7 @@ Output: [ 50, 40, 30, 20, 10 ]
 
 # Push and Pop
 # Push adds something to the end of an array
-# Pop removes it
+# Pop removes it, return the element you deleted
 a = [ 10, 20, 30, 40, 50]
 a.push(60)
 => [ 10, 20, 30, 40, 50, 60 ]
@@ -77,6 +89,30 @@ a << “winner”
 => [ 10, 20, 30, 40, “winner”]	
 a << “winner” << “chicken” << “dinner”
 => [ 10, 20, 30, 40, “winner”, “winner”, “chicken”, “dinner”]
+
+# Shift and Unshift
+# Shift takes off the first element, return the element you deleted
+# Unshift adds a new element to the beginning of the array
+> array = ["ant", "bat", "cat"]
+> array.shift 
+=> "ant"
+> array
+=> ["bat", "cat"]
+array.unshift("apple")
+=> ["apple", "bat", "cat"]
+
+# Delete_at and detete
+# Delete_at allows you to remove an element at an index, return the element you deleted
+# Delete allows you to remove an element based on it's value
+> array = ["ant", "bat", "cat"]
+> array.delete_at(1)
+=> "bat"
+> array
+=> ["ant", "cat"]
+> array.delete("cat")
+> array
+=> ["ant"]
+
 
 
 # Map: transform data in arrays, hashes and ranges
@@ -117,6 +153,26 @@ Output: [6,4,6]
 > array.map(&:length).min
 Output: 4
 
+# Iterating over arrays
+# for..in style of iterating
+> fruits = ["apple", "banana", "kiwi"]
+> for fruit in fruits do
+>   puts fruit
+> end
+Output: 
+apple
+banana 
+kiwi
+# each style of iterating
+> fruits.each do |fruit|
+>   put fruit
+> end
+Output: 
+apple
+banana 
+kiwi
+# This is the same syntax
+> fruits.each { |fruit| puts fruit}
 # array.each_with_index
 [aa, bb, cc].each_with_index do |element, index|
 Output:
@@ -127,9 +183,8 @@ Output:
 Output: index
 # array.each.with_index (lets you pick the starting index #)
 [aa, bb, cc].each.with_index(2) do |element, index|
-  Output:
-  2: aa
-  3: bb
-  4: cc
-
+Output:
+2: aa
+3: bb
+4: cc
 
