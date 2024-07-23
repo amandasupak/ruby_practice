@@ -16,5 +16,11 @@ return hash[key] # will return value
 hash.key?(search_term)
 hash.value?(search_term)
 
+# Map: transform data in arrays, hashes and ranges
+# Map - Convert hash values to symbols
+> hash = { bacon: "protein", apple: "fruit" }
+> hash.map { |k,v| [k, v.to_sym] }.to_h
+Output: {:bacon=>:protein, :apple=>:fruit}
+
 
 
