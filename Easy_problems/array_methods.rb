@@ -5,6 +5,8 @@
 > array = [1,2,3]
 > %w[apple, banana]
 Output: ["apple", "banana"]
+> %w(5,4,3,2,1)
+Output: ["5,4,3,2,1"]
 
 # Nested arrrays
 > nested_array = [["salmon", "halibut"], ["coral", "reef"]]

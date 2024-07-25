@@ -1,4 +1,8 @@
 
+# Next, adds 1 to the integer
+> 1.next
+Output: 2
+
 # Split string
 "Ant Bat Cat".split(" ")
 Output: [ “Ant”, “Bat”, “Cat”]

@@ -35,6 +35,18 @@ def two_sum2(nums, target)
         end
     end
 end
+def two_sum(nums, target)
+    hash = {}
+    nums.each_with_index do |num, index|
+        complement = target - num
+        if hash.key?(complement)
+            return [hash[complement], index]
+        else
+            hash[num] = index
+        end
+    end
+end
+
 
 def test_two_sum(nums, target)
     puts "Testing with #{nums} and target #{target}"
@@ -46,8 +58,7 @@ def test_two_sum(nums, target)
 end
 
 # Test one
-test_two_sum([2,7,11,15], 9)
+test_two_sum([2,7,11,15], 9)  #output: 0, 1
 
 # Test two
-test_two_sum([3,5,14,2,4], 6)
-
+test_two_sum([3,5,14,2,4], 6) #output: 4, 5
