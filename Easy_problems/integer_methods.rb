@@ -1,3 +1,7 @@
+
+# You can type a large number with "_" where the commas would go for readability
+# 1_000_000 is read by ruby as 1000000
+
 # Digits
 # Extracts the digits of a method into an array, reverse sorted
 > 12345.digits
