@@ -199,3 +199,17 @@ Output:
 > ["ant", "apple", "apollo"].all? { |char| char[0] == "a" }
 => true
 
+# Freeze
+# Prevent further modification to an object
+module Family
+  NAMES = ['Tom', 'Dane']
+end
+# mutation is allowed
+Family::NAMES << 'Alexander'
+p Family::NAMES #=> ["Tom", "Dane", "Alexander"]
+
+module Family
+  NAMES = ['Tom', 'Dane'].freeze
+end
+Family::NAMES.first.upcase!
+p Family::NAMES #=> ["TOM", "Dane"]
