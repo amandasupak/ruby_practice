@@ -21,6 +21,11 @@ first_name: = name: # this would give a syntax error
 person[:name] = "Bob"
 puts person[:name]  # Output: Bob
 
+
+:symbol is for passing into methods like model :name
+keyword_arguments: can call in any order
+
+
 #################
 
 Symbols in Ruby are immutable for several reasons:

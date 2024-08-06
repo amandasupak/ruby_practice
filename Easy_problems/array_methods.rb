@@ -199,6 +199,16 @@ Output:
 > ["ant", "apple", "apollo"].all? { |char| char[0] == "a" }
 => true
 
+# .any? Returns true if a block returns anything other than false or nil
+> %w[ant bear cat].any? { |word| word.length >= 3 }
+=> true
+> %w[ant bear cat].any?(/d/)
+=> false
+> [nil, true, 99].any? 
+=> true
+> [].any?
+=> false
+
 # Freeze
 # Prevent further modification to an object
 module Family
@@ -206,10 +216,12 @@ module Family
 end
 # mutation is allowed
 Family::NAMES << 'Alexander'
-p Family::NAMES #=> ["Tom", "Dane", "Alexander"]
+Family::NAMES #=> ["Tom", "Dane", "Alexander"]
 
 module Family
   NAMES = ['Tom', 'Dane'].freeze
 end
 Family::NAMES.first.upcase!
-p Family::NAMES #=> ["TOM", "Dane"]
+Family::NAMES #=> ["TOM", "Dane"]
+
+
