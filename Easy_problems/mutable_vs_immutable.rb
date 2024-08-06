@@ -1,3 +1,19 @@
+# :name A symbol, used as an immutable identifier, often as a hash key or method name.
+attr_reader :title
+:rubyguides.object_id
+
+# name: A keyword argument, used in method definitions. Allows you to pass arguments to a method using key-value pairs.
+def create_person(name:, age:)
+  puts "Name: #{name}, Age: #{age}"
+end
+
+create_person(name: "Alice", age: 30)
+
+# You should use symbols as names or labels for things (like methods) 
+# and use strings when you care more about the data (individual characters).
+
+--------------
+
 Mutable Identifiers
 Definition: Mutable identifiers are variables whose values can be changed after they are created.
 Example in Ruby: Strings are a common example of mutable objects.
