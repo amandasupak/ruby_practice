@@ -59,7 +59,7 @@ def roman_to_int(x)
         end
         previous_value = current_value
     end
-    return total_value
+    total_value
 end
 
 
