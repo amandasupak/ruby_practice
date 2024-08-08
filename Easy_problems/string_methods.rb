@@ -3,6 +3,12 @@
 > 1.next
 Output: 2
 
+# Mathmatical operations on strings
+> "<3" + "!"
+Output: "<3!"
+> "<3" * 3
+Output: "<3<3<3"
+
 # Split string
 "Ant Bat Cat".split(" ")
 Output: [ “Ant”, “Bat”, “Cat”]

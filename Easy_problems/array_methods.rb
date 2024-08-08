@@ -22,6 +22,12 @@ Output: "c"
 > array.index("a")
 Output: 0
 
+#Mathmatical operators on arrays
+> [1, 2] + [3, 4]
+Output: [1, 2, 3, 4]
+> [1, 2] * 3
+Output: [1, 2, 1, 2, 1, 2]
+
 # Length
 > array = [1,2,3]
 > array.length
