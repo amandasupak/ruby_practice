@@ -230,4 +230,10 @@ end
 Family::NAMES.first.upcase!
 Family::NAMES #=> ["TOM", "Dane"]
 
-
+# Splat Operator
+The splat operator converts the array into a list of its elements. So 
+it would be like taking away the array & replacing it with everything inside it.
+> attributes = [:title, :author, :category]
+> attr_reader *attributes
+#translates to this 
+attr_reader :title, :author, :category
