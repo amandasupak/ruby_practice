@@ -103,3 +103,10 @@ else
   puts "Out of range"
 end
 
+# Safe operator &.
+You may want to call a method on an object, but this object may be nil, which is no good 
+because calling a method on nil often results in an error.
+> if user && user.active
+# This &. is the safe navigator operator which only calls the active method on user if it's not nil.
+> if user&.active
+
