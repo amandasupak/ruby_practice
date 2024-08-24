@@ -62,21 +62,27 @@ def full_justify(words, max_width)
   current_line_width = 0
   final_justified_text = []
   
-  unless words.empty?
-    words.each do |word| 
-      if current_line_width <= max_width 
-        current_line_words += word
-        current_line_text += 1
-    
-      elsif current_line_width > max_width
-        # justify text
-        final_justified_text = current_line_text
-        current_line_words = []
-        current_line_width = 0
-      end
+  words.each do |word| 
+    # check if adding the next word would exceed mex line width
+    if current_line_width + word.length + current_line_words.size > max_width
+      # Justify the current line and add it to final_justified_text
+      justified_line = justify_line(current_line_words, current_line_width, max_width)
+      final_justified_text << justified_line
+      
+      # Reset for the next line
+      current_line_words = []
+      current_line_width = 0
     end
+    
+    # Add the current word to the line
+    current_line_words << word
+    current_line_width += word.length
   end
   final_justified_text
+end
+
+def justify_line(words, current_line_width, max_width)
+  # Implementation needed here
 end
 
 def full_test(words, max_width)
