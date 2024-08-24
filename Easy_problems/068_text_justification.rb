@@ -58,7 +58,25 @@
 ##############################################################################
 
 def full_justify(words, max_width)
+  current_line_words = []
+  current_line_width = 0
+  final_justified_text = []
   
+  unless words.empty?
+    words.each do |word| 
+      if current_line_width <= max_width 
+        current_line_words += word
+        current_line_text += 1
+    
+      elsif current_line_width > max_width
+        # justify text
+        final_justified_text = current_line_text
+        current_line_words = []
+        current_line_width = 0
+      end
+    end
+  end
+  final_justified_text
 end
 
 def full_test(words, max_width)
